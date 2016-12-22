@@ -1,0 +1,35 @@
+<md-content layout-fill ng-cloak>
+    <div ng-if="_ctrl.isFetching" layout="column" layout-fill layout-align="center center">
+      <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+      <h4>Loading</h4>
+    </div>
+    <div ng-if="_ctrl.isFetching != true" layout-fill> 
+      <div>
+        <div layout="column">
+          <div ng-if="_ctrl.result.image && (_ctrl.videos.length == 0)" class="image-heading">
+            <img class="image-heading-image" ng-src="{{_ctrl.result.image.contentUrl}}"/>
+          </div>
+          <div ng-if="_ctrl.videos.length > 0">
+          <div class="embed-responsive embed-responsive-16by9">
+              <youtube-video class="embed-responsive-item" video-id="_ctrl.videos[_ctrl.currentVideo].id.videoId"></youtube-video>
+          </div>
+                <md-button ng-click="_ctrl.currentVideo = (_ctrl.currentVideo + 1) % 10">Change Video</md-button>
+          </div>
+          <div layout-padding layout="column">
+            <h3>{{_ctrl.result.name}}</h3>
+            <div ng-if="_ctrl.result.type == 'music'" layout-fill layout="column">
+              <p>
+                <b>Album: </b>{{_ctrl.result.album}}<br>
+                <b>Artist: </b>{{_ctrl.result.artist}}<br>
+                <b>Genre: </b>{{_ctrl.result.genre}}<br>
+              </p>
+              <h4 ng-if="_ctrl.result.lyrics">Lyrics</h4>
+              <div class="lyrics-box" ng-if="_ctrl.result.lyrics">
+                <p style="white-space: pre-wrap; width:100%;">{{_ctrl.result.lyrics}}</p>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+</md-content>

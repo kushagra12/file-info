@@ -1,0 +1,20 @@
+{
+  "name": "file-info",
+  "version": "0.0.2",
+  "description": "A File Info Utility",
+  "main": "main.js",
+  "scripts": {
+    "start": "./node_modules/.bin/electron main.js"
+  },
+  "author": "Kushagra",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^1.4.1"
+  },
+  "dependencies": {
+    "lyric-get": "^1.0.3",
+    "musicmetadata": "^2.0.5",
+    "promise": "^7.1.1",
+    "request": "^2.79.0"
+  }
+}

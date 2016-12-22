@@ -1,0 +1,23 @@
+{
+  "name": "file-info",
+  "description": "A File Info Utility",
+  "main": "main.js",
+  "authors": [
+    "Kushagra"
+  ],
+  "license": "CC0-1.0",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-youtube-mb": "^1.3.1",
+    "angular-material": "^1.1.1",
+    "angular-route": "^1.6.0"
+  }
+}
